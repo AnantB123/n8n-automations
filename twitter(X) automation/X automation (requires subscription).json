@@ -1,0 +1,181 @@
+{
+  "name": "X automation (requires subscription)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -624,
+        -160
+      ],
+      
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "text": "=(Tweet made with n8n, or any placeholder, or nothing){{ $json.output }} ",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        400,
+        -160
+      ],
+      
+      "name": "Create Tweet",
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "Placeholder",
+          "name": "X account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "Any RSS url ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        -160
+      ],
+      
+      "name": "RSS Read"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Use the information from {{ $json.title }} and {{ $json.summary }} to write a short, engaging tweet for X (Twitter).\nMention the {{ $json.author }} and include the website {{ $json.link }} as the source.\nVisit the {{ $json.link }} to extract any extra useful context or key details that make the tweet more authentic or interesting.\nThe tweet must include the relevant image from the article.\nWrite naturally, as if you’re an experienced Twitter user who posts concise, scroll-stopping content. Use relevant hashtags.\nDon’t ask for clarification or explain your reasoning.\nOutput only the tweet text itself — no introductions or commentary.",
+        "options": {
+          "maxIterations": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        48,
+        -160
+      ],
+      
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "any ai model you prefer",
+        "options": {
+          "maxOutputTokens": "not needed but always best to have, so as to not overspend accidentally"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        120,
+        64
+      ],
+      
+      "name": "Any AI Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          
+          "name": "AI Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        -160
+      ],
+      
+      "name": "Limit"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "RSS Read",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tweet": {
+      "main": [
+        []
+      ]
+    },
+    "RSS Read": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create Tweet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  
+  "meta": {
+    
+  },
+  
+  "tags": []
+}
