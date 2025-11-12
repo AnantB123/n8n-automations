@@ -27,7 +27,7 @@ This workflow allows you to **type a word or phrase** and automatically **send a
 
 ## 🧠 How It Works
 
-1. You type a keyword in the n8n chat input (e.g., `Ferrari`).
+1. You type a keyword in the n8n chat input (e.g., `Cat`).
 2. The workflow searches Google Images for that keyword.
 3. The first image result is downloaded as binary data.
 4. The workflow sends that image to your chosen Discord server/channel.
@@ -65,16 +65,16 @@ Once configured, activate it and test by typing a word in the **chat input** pan
 If you type:
 
 ```
-Ferrari
+Cat
 ```
 
 The bot sends to Discord:
 
 ```
-Here’s your image of a Ferrari:
+Here’s your image of a Cat:
 ```
 
-*(with the first Google Image of a Ferrari attached)*
+*(with the first Google Image of a Cat attached)*
 
 ---
 
@@ -92,9 +92,3 @@ Here’s your image of a Ferrari:
 * You can modify the number of images fetched or use filters (e.g., color, type, size).
 * For stability, it’s recommended to limit to **1 image per request** to avoid API rate limits.
 
----
-
-## 🧑‍💻 Author
-
-Created by [Your Name]
-Part of an ongoing learning series exploring **automation, APIs, and workflow integration** with n8n.
