@@ -11,12 +11,6 @@ It demonstrates how to ingest documents, embed them, store and retrieve relevant
 
 ---
 
-## 🧩 Architecture Overview
-
-<p align="center">
-  <img src="./images/rag-workflow-overview.png" width="700" alt="n8n RAG Workflow Overview">
-</p>
-
 ### 🔄 Workflow Summary
 
 1. **Manual or Chat Trigger** — starts the workflow  
@@ -144,3 +138,4 @@ with full transparency and no hidden scripts or dependencies.
 <p align="center">
   <sub>Built with 💡 by a psychology student passionate about AI workflows and mental-model engineering.</sub>
 </p>
+
