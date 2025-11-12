@@ -63,7 +63,7 @@ n8n/
 ## 🪶 License
 
 **MIT License** — free to use, modify, and share.
-Credit is appreciated but not required.
+Credit is appreciated.
 
 ---
 
