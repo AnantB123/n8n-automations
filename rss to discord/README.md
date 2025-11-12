@@ -33,7 +33,3 @@ This workflow automatically fetches new articles from the **Wired RSS feed** and
 * You can replace the Wired RSS feed URL with any RSS feed you want.
 * The JavaScript node can be customized to add filters, summaries, or AI processing later.
 
----
-
-**Author:** [Your Name]
-**Built with:** n8n (Local Open Source)
