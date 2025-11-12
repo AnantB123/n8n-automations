@@ -77,12 +77,6 @@ If you’re on the free tier, the tweet won’t actually post — see alternativ
 
 ---
 
-## 🖼️ Example Workflow Layout
-
-![Workflow Preview](./94f02ab1-2558-47f7-834f-63ca5f42d259.png)
-
----
-
 ## 🪶 Notes
 
 * This project is for **educational and experimental** purposes.
@@ -104,3 +98,4 @@ Automated AI-powered tweet generation from RSS feeds using n8n + Google Gemini.
 
 **Tags:**
 `n8n` `automation` `gemini` `twitter` `x-api` `rss` `ai-content` `workflow` `langchain`
+
