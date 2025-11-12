@@ -106,14 +106,6 @@ This architecture ensures accurate, context-grounded responses while minimizing 
 
 ---
 
-## 📊 Example Output
-
-<p align="center">
-  <img src="./images/sample-chat.png" width="450" alt="Example of Gemini RAG chat response">
-</p>
-
----
-
 ## 🧾 License
 
 **MIT License** — free to use, modify, and distribute.  
@@ -133,9 +125,4 @@ entirely within n8n using:
 It’s designed for learning, experimentation, and real-world RAG projects —  
 with full transparency and no hidden scripts or dependencies.
 
----
-
-<p align="center">
-  <sub>Built with 💡 by a psychology student passionate about AI workflows and mental-model engineering.</sub>
-</p>
 
