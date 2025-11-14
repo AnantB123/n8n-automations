@@ -119,24 +119,3 @@ You're ready.
 
 ---
 
-## 📁 Files
-
-- `workflow.json` – the full n8n automation
-
----
-
-## 🧩 Future Improvements
-
-- Add natural-language date parsing (Chrono)  
-- Add recurring events  
-- Add reminders  
-- Integrate with voice messages  
-
----
-
-## ⭐ Credits
-
-Created with **n8n**, **Google Gemini**, and **Google Calendar API**.  
-Built for fast, simple, WhatsApp-based productivity.
-
----
